@@ -1,0 +1,71 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.swiper {
+  width: 100%;
+  height: 80%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 38rem;
+  object-fit: cover;
+  position: relative;
+
+  @include m.desktop {
+    height: 28rem;
+  }
+}
+
+.menu {
+  margin-top: 1rem;
+  padding: 6rem 0;
+  text-align: center;
+  font-family: v.$fuenteSecundaria;
+
+  @include m.desktop {
+    margin-top: 8rem;
+  }
+
+  &__bebida {
+    position: absolute;
+
+    padding: 100% 5rem;
+    text-align: justify;
+
+    background-color: v.$secundario;
+
+    opacity: 0;
+    transition: opacity 0.5s;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+.bebida {
+  &__nombre {
+    width: 45%;
+    color: v.$blanco;
+    border-bottom: 1px solid v.$blanco;
+    margin: 0 auto;
+    font-weight: 700;
+  }
+
+  &__descripcion {
+    color: v.$blanco;
+  }
+}

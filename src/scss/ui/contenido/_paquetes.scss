@@ -1,0 +1,57 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.paquetes {
+  margin-top: 2rem;
+  padding: 6rem 0;
+  font-family: v.$fuenteSecundaria;
+  text-align: center;
+  background-color: v.$secundario;
+  color: v.$blanco;
+
+  &__heading {
+    margin: 0;
+  }
+
+  &__grid {
+    @include m.grid(1, 2rem);
+
+    @include m.tablet {
+      @include m.grid(2, 2rem);
+    }
+    @include m.desktop {
+      @include m.grid(3, 2rem);
+    }
+  }
+}
+
+.paquete {
+  background-color: v.$blanco;
+  padding: 5rem 1rem;
+  border-radius: 0.5rem;
+
+  &__nombre {
+    color: v.$primario;
+    text-transform: uppercase;
+    font-size: 3rem;
+  }
+
+  &__precio {
+    color: v.$secundario;
+    font-size: 2.2rem;
+    font-weight: bold;
+  }
+
+  &__descripcion {
+    color: v.$secundario;
+    font-size: 2rem;
+  }
+
+  &__boton {
+    @include m.boton(v.$primario, v.$blanco);
+  }
+
+  &__svg {
+    margin-bottom: 2rem;
+  }
+}
